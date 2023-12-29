@@ -1,23 +1,25 @@
 
 import { useEffect, useState } from 'react';
 import './App.css';
-import Barchart from './component/Barchart';
-import { datas } from './Data/Data';
-import Linechart from './component/Linechart';
-import Piechart from './component/Piechart';
+// import Barchart from './component/Barchart';
+// import { datas } from './Data/Data';
+// import Linechart from './component/Linechart';
+// import Piechart from './component/Piechart';
 
-import { Myaxios } from './Data/services/Myaxios';
+
 import DataFetching from './Data/DataFetching';
 import BarchartApi from './component/BarchartApi';
+import LinechartApi from './component/LinechartApi';
+import PiechartApi from './component/PiechartApi';
 
 function App() {
-  const [userdata,setuserdata]=useState({
-    labels:datas.map((data)=>data.year),
-    datasets:[{
-      label:"User Gained",
-      data:datas.map((data)=>data.userGain)
-    }]
-  });
+  // const [userdata,setuserdata]=useState({
+  //   labels:datas.map((data)=>data.year),
+  //   datasets:[{
+  //     label:"User Gained",
+  //     data:datas.map((data)=>data.userGain)
+  //   }]
+  // });
   
   const [chartdata,setchartdata]=useState([])
   const setdatatoapp=(data)=>{
@@ -45,10 +47,12 @@ setshowchartdata({
   return (
     <div className="App">
      <DataFetching setdatatoapp={setdatatoapp}></DataFetching>
-     <Barchart userdata={userdata}></Barchart>
+     {/* <Barchart userdata={userdata}></Barchart>
      <Linechart userdata={userdata}></Linechart>
-     <Piechart userdata={userdata}></Piechart>
+     <Piechart userdata={userdata}></Piechart> */}
      <BarchartApi showchartdata={showchartdata}></BarchartApi>
+     <LinechartApi showchartdata={showchartdata}></LinechartApi>
+      <PiechartApi chartdata={chartdata}></PiechartApi> 
     </div>
   );
 }
