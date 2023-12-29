@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Pie } from "react-chartjs-2";
 import Chart from 'chart.js/auto'
 const PiechartApi=({chartdata})=>{
+    
     const [userdata,setuserdata]=useState({
         labels:[],
         datasets:[{
@@ -25,7 +26,7 @@ const PiechartApi=({chartdata})=>{
         })
     
     },[chartdata])
-    return <div style={{width:"1000px"}}>
+    return <div >
         <Pie data={userdata}></Pie>
     </div>
 }

@@ -3,7 +3,7 @@ import { Line } from "react-chartjs-2";
 import Chart from 'chart.js/auto'
 const LinechartApi=({showchartdata})=>{
     
-    return <div style={{width:"1000px"}}>
+    return <div>
         <Line data={showchartdata}/>
     </div>
 }
